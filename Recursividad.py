@@ -7,11 +7,16 @@ def Menu():
     print("5.Calcular cuantos digitos tiene un número")
     print("6.Salir")
 allow = False
-def Repeat(word,num,cont,final):
-    print(cont)
-    print(final)
+def MCD(a,b):
+    if b == 0:
+        return a
+    else:
+        a = b
+        b = a % b
+        return MCD(a,b)
+def Repeat(word,num,cont):
     if cont == num:
-        return
+        return ""
     else:
         cont = cont+1
         return f"{word}{Repeat(word,num,cont)}"
@@ -48,13 +53,15 @@ while allow == False:
     match opt:
         case 1:
             num_a = int(input("Ingrese el primer número:"))
+            num_b =
+            print(f"El MCD de {num_a},{num_b} es {MCD(num_a,num_a)}")
         case 2:
             word = input("Ingrese la cadena que desea repetir: ")
             num = int(input("Cuantas veces se va a repetir? "))
             if num <= 0 or num >1000:
                 print("Cantidad invalida")
             else:
-                print(Repeat(word,num,0,""))
+                print(Repeat(word,num,0,))
         case 3:
             word = input("Ingrese la cadena: ")
             look = input("Ingrese la letra a encontrar: ")
