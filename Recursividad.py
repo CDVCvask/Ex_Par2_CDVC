@@ -33,16 +33,16 @@ def Find(Parts,Look,cont):
             return Find(Parts[1:],Look,cont)
 def Bin(num,bin,cont):
     if cont == num:
-        return bin
+        return " "
     else:
-        if bin == 1:
-            bin = 0
-        else:
+        if bin == 0:
             bin = 1
-        return f"{bin}{Bin(num,bin,cont+1)}"
+            return f"{bin}{Bin(num,bin,cont+1)}"
+        else:
+            return f"{bin-1}{Bin(num,bin,cont+1)}"
 def Digits(Num,cont,check,repeat):
     print(f"{num},{check},{cont},{repeat}")
-    if check <= 1:
+    if check <= 1 or cont > num:
         return repeat
     else:
         check = Num/cont
