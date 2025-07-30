@@ -8,11 +8,13 @@ def Menu():
     print("6.Salir")
 allow = False
 def MCD(a,b):
+    print(f"{a} + {b}")
     if b == 0:
         return a
     else:
+        temp = a
         a = b
-        b = a % b
+        b = temp % b
         return MCD(a,b)
 def Repeat(word,num,cont):
     if cont == num:
@@ -52,9 +54,9 @@ while allow == False:
     opt = int(input("Ingrese la opción que desee: "))
     match opt:
         case 1:
-            num_a = int(input("Ingrese el primer número:"))
-            num_b =
-            print(f"El MCD de {num_a},{num_b} es {MCD(num_a,num_a)}")
+            num_a = int(input("Ingrese el primer número: "))
+            num_b = int(input("Ingrese el segundo número: "))
+            print(f"El MCD de {num_a},{num_b} es {MCD(num_a,num_b)}")
         case 2:
             word = input("Ingrese la cadena que desea repetir: ")
             num = int(input("Cuantas veces se va a repetir? "))
