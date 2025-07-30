@@ -7,6 +7,21 @@ def Menu():
     print("5.Calcular cuantos digitos tiene un número")
     print("6.Salir")
 allow = False
+def Repeat(word,num,cont):
+    if cont == num:
+        return cont
+    else:
+        cont = cont+1
+        return Repeat(word,num,cont)
+def Find(Parts,Look,cont):
+    if Parts == []:
+        return cont
+    else:
+        if Parts[0] == Look:
+            cont = cont + 1
+            return Find(Parts[1:],Look,cont)
+        else:
+            return Find(Parts[1:],Look,cont)
 while allow == False:
     Menu()
     opt = int(input("Ingrese la opción que desee: "))
@@ -15,12 +30,23 @@ while allow == False:
             num_a = int(input("Ingrese el primer número:"))
         case 2:
             word = input("Ingrese la cadena que desea repetir: ")
+            num = int(input("Cuantas veces se va a repetir?"))
+            if num <= 0 or num >1000:
+                print("Cantidad invalida")
+            else:
+                print(Repeat(word,num,0))
         case 3:
             word = input("Ingrese la cadena: ")
+            look = input("Ingrese la letra a encontrar: ")
+            parts = list(word)
+            total = Find(parts,look,0)
+            print(f"En la cadena {word} la letra {look} se repite {total} veces")
         case 4:
             num = int(input("Ingrese un número: "))
         case 5:
             num = int(input("Ingrese un número: "))
+            list = (1,2,3,4,5,6,7,8,9)
+            print(list)
         case 6:
             print("Gracias por utilizar el programa")
             break
