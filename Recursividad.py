@@ -17,11 +17,19 @@ def Find(Parts,Look,cont):
     if Parts == []:
         return cont
     else:
-        if Parts[0] == Look:
+        if Parts[0].lower() == Look.lower():
             cont = cont + 1
             return Find(Parts[1:],Look,cont)
         else:
             return Find(Parts[1:],Look,cont)
+def Digits(Num,cont,check,repeat):
+    if check <= 0:
+        return repeat
+    else:
+        check = Num/cont
+        cont = cont * 10
+        repeat = repeat + 1
+        return Digits(Num,cont,check,repeat)
 while allow == False:
     Menu()
     opt = int(input("Ingrese la opción que desee: "))
@@ -43,10 +51,12 @@ while allow == False:
             print(f"En la cadena {word} la letra {look} se repite {total} veces")
         case 4:
             num = int(input("Ingrese un número: "))
+            list = (1, 2, 3, 4, 5, 6, 7, 8, 9)
+            print(list)
         case 5:
             num = int(input("Ingrese un número: "))
-            list = (1,2,3,4,5,6,7,8,9)
-            print(list)
+            total = Digits(num,1,1,1)
+            print(f"La cantidad {num} tiene {total} digitos")
         case 6:
             print("Gracias por utilizar el programa")
             break
