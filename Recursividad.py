@@ -31,17 +31,10 @@ def Find(Parts,Look,cont):
             return Find(Parts[1:],Look,cont)
         else:
             return Find(Parts[1:],Look,cont)
-def binary(num,bin,cont):
+def binary(num,bin,bin2,cont):
     if cont == num:
         return ""
-    else:
-        if bin == 0:
-            bin = 1
-            temp = 0
-        else:
-            bin = 0
-            temp = 1
-    return f"{temp}{bin}{binary(num,bin,cont+1)}""
+    return f""
 def Digits(Num,cont,check,repeat):
     print(f"{num},{check},{cont},{repeat}")
     if check <= 1 or cont > num:
@@ -74,7 +67,7 @@ while allow == False:
             print(f"En la cadena {word} la letra {look} se repite {total} veces")
         case 4:
             num = int(input("Ingrese un número: "))
-            print(binary(num,0,0))
+            print(binary(num,0,0,0))
         case 5:
             num = int(input("Ingrese un número: "))
             total = Digits(num,1,2,0)
