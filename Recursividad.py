@@ -36,7 +36,6 @@ def binary(num,bin,bin2,cont):
         return ""
     return f""
 def Digits(Num,cont,check,repeat):
-    print(f"{num},{check},{cont},{repeat}")
     if check <= 1 or cont > num:
         return repeat
     else:
@@ -73,7 +72,5 @@ while allow == False:
             total = Digits(num,1,2,0)
             print(f"La cantidad {num} tiene {total} digitos")
         case 6:
-            list = (1, 2, 3, 4, 5, 6, 7, 8, 9)
-            print(list)
             print("Gracias por utilizar el programa")
             break
