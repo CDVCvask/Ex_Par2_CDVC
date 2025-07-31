@@ -31,8 +31,10 @@ def Find(Parts,Look,cont):
             return Find(Parts[1:],Look,cont)
         else:
             return Find(Parts[1:],Look,cont)
+#Ya vi como se hace, pero la verdad no me hubiera salido en clase, se ve muy simple pero
+#se me hice muy complejo pensarlo
 def binary(num):
-    if num == 1:
+    if num == 0:
         return ""
     else:
         return binary(num//2) + str(num%2)
